@@ -1,0 +1,37 @@
+# 文件
+
+## <Badge type="tip" text=" 2024/10/27" />提研院发〔2024〕18号 《提瓦特文化科学研究院常务理事会关于《提瓦特编年史》销售事宜的公告》
+![alt text](./images/image-1.png)
+![alt text](./images/image-2.png)
+![alt text](./images/image-3.png)
+![alt text](./images/image-4.png)
+![alt text](./images/image-5.png)
+![alt text](./images/image-6.png)
+![alt text](./images/image-7.png)
+
+## <Badge type="tip" text=" 2024/8/26" />提研院发〔2024〕12号 《提瓦特文化科学研究院关于计划预售第三批〈提瓦特编年史〉的决定》
+
+![决定1](./images/doc-12-page-1.jpg)
+
+![决定2](./images/doc-12-page-2.jpg)
+
+<style scoped>
+@media (max-width: 640px) {
+  .vp-doc h2 {
+    font-size: 1.3rem;
+  }
+  
+  .vp-doc h3 {
+    font-size: 1.1rem;
+  }
+  
+  .vp-doc p {
+    font-size: 0.9rem;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+</style>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 提瓦特文化科学研究院官方网站</title>
+    <style>
+        :root {
+            --primary: #a8b1ff;
+            --bg-light: #f8f9fa;
+            --text-light: #2c3e50;
+            --bg-dark: #1a1a1a;
+            --text-dark: #f8f9fa;
+            --card-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            overflow: hidden;
+        }
+
+        /* 深色模式 */
+        body.dark {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        /* 浅色模式 */
+        body.light {
+            background: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* 新增Logo区域样式 */
+        .logo-header {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 10;
+        }
+
+        .logo-img {
+            width: 36px;
+            height: 36px;
+            background-image: url('/head&favicon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            background: linear-gradient(120deg, #f862ff, #03a5f8);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 10px rgba(168, 177, 255, 0.5);
+        }
+
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 1;
+        }
+
+        .content {
+            max-width: 600px;
+            text-align: center;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(168, 177, 255, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            gap: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(168, 177, 255, 0.3);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 5rem;
+            }
+
+            .content {
+                padding: 2rem;
+            }
+
+            .logo-header {
+                top: 1rem;
+                left: 1rem;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 新增Logo区域 -->
+    <div class="logo-header">
+        <div class="logo-img"></div>
+        <div class="logo-text">提瓦特文化科学研究院官方网站</div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <div class="content">
+            <h1>404</h1>
+            <p>页面未找到。找错地方了吧？</p>
+            <a href="/" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                返回首页
+            </a>
+        </div>
+    </div>
+
+    <script src="/particles.min.js"></script>
+    <script>
+        // 主题初始化
+        const theme = localStorage.getItem('vitepress-theme-appearance') || 'auto';
+        if (theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.add('light');
+        }
+
+        // 粒子配置
+        const particleColor = document.body.classList.contains('dark') ? '#e0e3ff' : '#4a4d6d';
+
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 60 },
+                color: { value: particleColor },
+                shape: { type: 'circle' },
+                opacity: { value: 0.8 },
+                size: { value: 2.5, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 120,
+                    color: particleColor,
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 4,
+                    direction: 'none',
+                    out_mode: 'out'
+                }
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>生命周期终止公告 | Life-cycle End Announcement</title>
+    <style>
+        :root {
+            --background: #e0e5ec;
+            --text: #1f1f1f;
+            --shadow: #a3b1c6;
+            --highlight: #ffffff;
+            --accent: #366296;
+            --card-bg: #e0e5ec;
+        }
+
+        .dark-theme {
+            --background: #2d3748;
+            --text: #e2e8f0;
+            --shadow: #1a202c;
+            --highlight: #4a5568;
+            --accent: #63b3ed;
+            --card-bg: #2d3748;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background);
+            color: var(--text);
+            transition: all 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .title-container {
+            position: relative;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 60px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .title-background {
+            font-size: 12em;
+            font-weight: bold;
+            color: var(--shadow);
+            opacity: 0.15;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            z-index: -1;
+        }
+
+        .title-foreground {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(45deg, var(--accent), var(--text));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .announcement {
+            display: flex;
+            gap: 30px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .announcement-section {
+            flex: 1;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 8px 8px 16px var(--shadow),
+                        -8px -8px 16px var(--highlight);
+            transition: opacity 0.3s ease;
+        }
+
+        .announcement-section h2 {
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .announcement-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .important-date {
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .control-button {
+            background: var(--background);
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 6px 6px 12px var(--shadow),
+                        -6px -6px 12px var(--highlight);
+            transition: all 0.3s ease;
+        }
+
+        .control-button:hover {
+            color: var(--accent);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-enter {
+            opacity: 0;
+        }
+
+        .fade-enter-active {
+            opacity: 1;
+            transition: opacity 300ms ease-in;
+        }
+
+        .fade-exit {
+            opacity: 1;
+        }
+
+        .fade-exit-active {
+            opacity: 0;
+            transition: opacity 300ms ease-in;
+        }
+
+        .link {
+            color: var(--accent);
+            font-family: 'Consolas';
+        }
+
+        @media (max-width: 768px) {
+            .announcement {
+                flex-direction: column;
+            }
+
+            .announcement-section {
+                margin-bottom: 20px;
+            }
+
+            .title-background {
+                font-size: 6em;
+            }
+
+            .title-foreground {
+                font-size: 1.8em;
+            }
+
+            .title-container {
+                padding-top: 80px;
+            }
+
+            .controls {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <div class="title-background">TICS</div>
+            <h1 class="title-foreground">生命周期终止公告 | Life-cycle End Announcement</h1>
+        </div>
+        <div class="announcement">
+            <section id="chinese" class="announcement-section">
+                <h2>主流生命周期终止</h2>
+                <p>自2024年7月3日，本网站交付以来，共发布文章16篇，产生评论数十条，由于日益增长的服务需求，根据提瓦特文化科学研究院 运营宣传部 常务委员会 临时委员会 研究决定，现终止对本wordpress网站的生命周期主流支持，将不再于本网站发布文章。<br><br>为避免服务器高负荷运转，延长支持自2025年2月6号起终止，请用户迁移至新版官网。</p>
+                <p><a href="http://next.tics.top" target="_blank" rel="noopener noreferrer" class="link">https://next.tics.top</a></p>
+                <p><span class="important-date">开始时间：</span> 2024年7月3日</p>
+                <p><span class="important-date">主流支持终止：</span> 2024年10月8日</p>
+                <p><span class="important-date">延长支持终止：</span> 2025年2月6日</p>
+                <p class="signature">提瓦特文化科学研究院 运营宣传部 WhoTao<br>2025年2月6日</p>
+            </section>
+            <section id="english" class="announcement-section hidden">
+                <h2>Life-cycle End</h2>
+                <p>Since first being online on July 7 2024, this website has published 16 articles and has received dozens of feedbacks. In order to satisfy daily increasing service demanding, according to the decision of Operations&Publicity Department, Standing Committee and Central Temporary Committee of Teyvat Institute of Culture and Science (short for the TICS), we will stop the Life-cycle Support of the WordPress version website and will not publish articles or announcements through this website any more. In order to reduce heavy-pressure running time of the HK server, the extend support of WordPress version website has stopped. Please move to the new website.</p>
+                <p><a href="https://next.tics.top" target="_blank" rel="noopener noreferrer" class="link">https://next.tics.top</a></p>
+                <p><span class="important-date">Main support stopped since:</span> October 8 2024</p>
+                <p><span class="important-date">Extend support stopped since:</span> February 6 2025</p>
+                <p class="signature">Operations&Publicity Department of Teyvat Institute of Culture and Science<br>WhoTao<br>February 6 2025</p>
+            </section>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="languageToggle" class="control-button" aria-label="Toggle language">🌐</button>
+        <button id="themeToggle" class="control-button" aria-label="Toggle dark mode">🌓</button>
+    </div>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const languageToggle = document.getElementById('languageToggle');
+        const body = document.body;
+        const chineseSection = document.getElementById('chinese');
+        const englishSection = document.getElementById('english');
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            body.classList.add('dark-theme');
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (e.matches) {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+        });
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+        });
+
+        let isChineseVisible = true;
+        languageToggle.addEventListener('click', () => {
+            if (isChineseVisible) {
+                fadeOut(chineseSection, () => {
+                    chineseSection.classList.add('hidden');
+                    englishSection.classList.remove('hidden');
+                    fadeIn(englishSection);
+                });
+            } else {
+                fadeOut(englishSection, () => {
+                    englishSection.classList.add('hidden');
+                    chineseSection.classList.remove('hidden');
+                    fadeIn(chineseSection);
+                });
+            }
+            isChineseVisible = !isChineseVisible;
+        });
+
+        function fadeOut(element, callback) {
+            element.style.opacity = '1';
+            (function fade() {
+                if ((element.style.opacity -= .1) < 0) {
+                    element.style.display = 'none';
+                    if (callback) callback();
+                } else {
+                    requestAnimationFrame(fade);
+                }
+            })();
+        }
+
+        function fadeIn(element, display) {
+            element.style.opacity = '0';
+            element.style.display = display || 'block';
+            (function fade() {
+                var val = parseFloat(element.style.opacity);
+                if (!((val += .1) > 1)) {
+                    element.style.opacity = val;
+                    requestAnimationFrame(fade);
+                }
+            })();
+        }
+    </script>
+</body>
+</html>
+

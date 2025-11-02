@@ -1,0 +1,973 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.toggle-btn {
+    background-color: #003b77;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #004080;
+}
+
+.darkmode .toggle-btn {
+    background-color: #144ca4;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #004080;
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+.header.hidden {
+    transform: translateY(-100%);
+}
+  
+.header.transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+  
+.header.scrolled {
+    background-color: white;
+}
+  
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+  
+.header.scrolled .home-link {
+    color: #002b5c;
+}
+  
+.tics-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+  
+  .header-title {
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .header.scrolled .header-title {
+    color: #002b5c;
+  }
+  
+  .lang-button {
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .header.scrolled .lang-button {
+    color: #666;
+  }
+  
+  .header.scrolled .lang-button:hover {
+    color: #002b5c;
+  }
+
+.tics-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(0, 43, 92, 0.2);
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-small {
+    width: 40px;
+    height: 40px;
+}
+
+.header-title {
+    margin-left: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .header-title {
+    color: #002B5C;
+}
+
+/* Hero section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #002B5C;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 0; /* 移除底部内边距 */
+}
+
+.hero-logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    font-weight: lighter;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+/* Main content styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+/* Section styles */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #002B5C;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #002B5C;
+}
+
+.introduction {
+    margin-bottom: 4rem;
+}
+
+/* Introduction section */
+.intro-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.intro-section:last-child {
+    margin-bottom: 0;
+}
+
+.intro-section h3 {
+    color: #002B5C;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.intro-section h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 1.5em;
+    background-color: #002B5C;
+    border-radius: 2px;
+}
+
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  
+.member-card,
+.acknowledgment-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 43, 92, 0.1);
+}
+  
+.member-card:hover,
+.acknowledgment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 43, 92, 0.2);
+}
+  
+.full-height {
+    height: 100vh;
+    min-height: 600px;
+}
+  
+.hero {
+    background-color: #002b5c;
+    background-image: linear-gradient(135deg, #002b5c 0%, #004080 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+  
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(./TIH.png);
+    background-size: 300px;
+    background-repeat: repeat;
+    opacity: 0.05;
+    animation: backgroundScroll 60s linear infinite;
+}
+  
+@keyframes backgroundScroll {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 300px 300px;
+    }
+}
+  
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+  
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #002b5c;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+  
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #002b5c;
+    border-radius: 3px;
+}
+  
+
+/* Recruitment section styles */
+.recruitment {
+    margin-bottom: 4rem;
+}
+
+.recruitment-content {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recruitment-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.recruitment-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: #002B5C;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+}
+
+.recruitment-button:hover {
+    background-color: #003875;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 43, 92, 0.2);
+}
+
+.recruitment-button svg {
+    transition: transform 0.3s ease;
+}
+
+.recruitment-button:hover svg {
+    transform: translateX(4px);
+}
+
+/* Acknowledgments section */
+.acknowledgments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.acknowledgment-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.acknowledgment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer styles */
+.footer {
+    background: #002B5C;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer .copyright {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Language button */
+.lang-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .lang-button {
+    color: #666;
+}
+
+.header.scrolled .lang-button:hover {
+    color: #002B5C;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+    .header-title {
+        font-size: 0.75rem;
+    }
+
+    .logo-small {
+        width: 30px;
+        height: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .members-grid,
+    .acknowledgments-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+    .header-title {
+        font-size: 0.75rem;
+    }
+
+    .logo-small {
+        width: 30px;
+        height: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .members-grid,
+    .acknowledgments-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .hero h1.darkmode {
+        font-size: 3rem;
+    }
+
+    .hero p.darkmode {
+        font-size: 1.25rem;
+    }
+
+    .darkmode .header-title {
+        font-size: 0.75rem;
+    }
+
+    .darkmode .logo-small {
+        width: 30px;
+        height: 30px;
+    }
+
+    .darkmode .section-title {
+        font-size: 2rem;
+    }
+
+    .darkmode .members-grid,
+    .darkmode .acknowledgments-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+*.darkmode  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.darkmode  {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #cccccc;
+    background-color: #1b1b1f;
+}
+
+.darkmode .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.darkmode .header.hidden {
+    transform: translateY(-100%);
+}
+
+.darkmode .header.transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.darkmode .header.scrolled {
+    background-color: #1b1b1f;
+}
+
+.darkmode .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.darkmode .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.darkmode .home-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.darkmode .header.scrolled .home-link {
+    color: white;
+}
+
+.darkmode .tics-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.darkmode .header-title {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.darkmode .header.scrolled .header-title {
+    color: white;
+}
+
+.darkmode .header.scrolled .lang-button {
+    color: #666;
+}
+
+.darkmode .header.scrolled .lang-button:hover {
+    color: #4166f5;
+}
+
+.darkmode .divider {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(0, 43, 92, 0.2);
+}
+
+.darkmode .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.darkmode .logo-small {
+    width: 40px;
+    height: 40px;
+}
+
+.darkmode .header-title {
+    margin-left: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+/* Hero section */
+.darkmode .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4166f5;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.darkmode .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 0;
+}
+
+.darkmode .hero-logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+}
+
+.darkmode .hero h1 {
+    font-size: 4rem;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode .hero p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    font-weight: lighter;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode .scroll-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+/* Main content styles */
+.darkmode .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    background-color: #1b1b1f;
+}
+
+/* Section styles */
+.darkmode .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #4166f5;
+}
+
+.darkmode .introduction {
+    margin-bottom: 4rem;
+}
+
+/* Introduction section */
+.darkmode .intro-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #23232b;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.darkmode .intro-section:last-child {
+    margin-bottom: 0;
+}
+
+.darkmode .intro-section h3 {
+    color: #4166f5;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.darkmode .intro-section h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 1.5em;
+    background-color: #4166f5;
+    border-radius: 2px;
+}
+
+.darkmode .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.darkmode .member-card,
+.darkmode .acknowledgment-card {
+    background: #2b2b33;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 43, 92, 0.1);
+}
+
+.darkmode .member-card:hover,
+.darkmode .acknowledgment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 43, 92, 0.2);
+}
+
+.darkmode .full-height {
+    height: 100vh;
+    min-height: 600px;
+}
+
+.darkmode .hero {
+    background-color: #4166f5;
+    background-image: linear-gradient(135deg, #4166f5 0%, #004080 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.darkmode .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(./TIH.png);
+    background-size: 300px;
+    background-repeat: repeat;
+    opacity: 0.05;
+    animation: backgroundScroll 60s linear infinite;
+}
+
+.darkmode .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.darkmode .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4166f5;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.darkmode .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #4166f5;
+    border-radius: 3px;
+}
+
+/* Recruitment section styles */
+.darkmode .recruitment {
+    margin-bottom: 4rem;
+}
+
+.darkmode .recruitment-content {
+    text-align: center;
+    padding: 3rem;
+    background: #2b2b33;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.darkmode .recruitment-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+.darkmode .recruitment-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: #4166f5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+}
+
+.darkmode .recruitment-button:hover {
+    background-color: #003875;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 43, 92, 0.2);
+}
+
+.darkmode .recruitment-button svg {
+    transition: transform 0.3s ease;
+}
+
+.darkmode .recruitment-button:hover svg {
+    transform: translateX(4px);
+}
+
+/* Acknowledgments section */
+.darkmode .acknowledgments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+/* Footer styles */
+.darkmode .footer {
+    background: #4166f5;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.darkmode .footer p {
+    margin-bottom: 0.5rem;
+}
+
+.darkmode .footer .copyright {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Language button */
+.darkmode .lang-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.darkmode .header.scrolled .lang-button {
+    color: #666;
+}
+
+.darkmode .header.scrolled .lang-button:hover {
+    color: #4166f5;
+}

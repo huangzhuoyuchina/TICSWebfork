@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购买结束 | 加入聊天室</title>
+    <link rel="stylesheet" href="font.css">
+    <style>
+        :root {
+            /* Light Theme Colors */
+            --md-sys-color-primary: #6750A4;
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-primary-container: #EADDFF;
+            --md-sys-color-on-primary-container: #21005E;
+            --md-sys-color-secondary: #625B71;
+            --md-sys-color-on-secondary: #FFFFFF;
+            --md-sys-color-secondary-container: #E8DEF8;
+            --md-sys-color-on-secondary-container: #1E192B;
+            --md-sys-color-tertiary: #7D5260;
+            --md-sys-color-on-tertiary: #FFFFFF;
+            --md-sys-color-tertiary-container: #FFD8E4;
+            --md-sys-color-on-tertiary-container: #370B1E;
+            --md-sys-color-error: #B3261E;
+            --md-sys-color-on-error: #FFFFFF;
+            --md-sys-color-error-container: #F9DEDC;
+            --md-sys-color-on-error-container: #410E0B;
+            --md-sys-color-outline: #79747E;
+            --md-sys-color-background: #FFFBFE;
+            --md-sys-color-on-background: #1C1B1F;
+            --md-sys-color-surface: #FFFBFE;
+            --md-sys-color-on-surface: #1C1B1F;
+            --md-sys-color-surface-variant: #E7E0EC;
+            --md-sys-color-on-surface-variant: #49454F;
+            --md-sys-color-inverse-surface: #313033;
+            --md-sys-color-inverse-on-surface: #F4EFF4;
+            --md-sys-audio-shadow-dark: rgba(0, 0, 0, 0.1);
+            --md-sys-audio-shadow-light: rgba(255, 255, 255, 0.7);
+            --md-sys-backdrop-filter: rgba(0, 0, 0, 0.3);
+
+            /* Elevation */
+            --md-sys-elevation-level1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
+            --md-sys-elevation-level2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
+            --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+            --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+            --md-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+            /* Typography */
+            --md-sys-typescale-body-large-font: "Roboto", sans-serif;
+            --md-sys-typescale-body-large-weight: 400;
+            --md-sys-typescale-body-large-size: 16px;
+            --md-sys-typescale-body-large-line-height: 24px;
+            --md-sys-typescale-body-large-letter-spacing: 0.5px;
+
+            --md-sys-typescale-body-medium-font: "Roboto", sans-serif;
+            --md-sys-typescale-body-medium-weight: 400;
+            --md-sys-typescale-body-medium-size: 14px;
+            --md-sys-typescale-body-medium-line-height: 20px;
+            --md-sys-typescale-body-medium-letter-spacing: 0.25px;
+
+            --md-sys-typescale-headline-small-font: "Roboto", sans-serif;
+            --md-sys-typescale-headline-small-weight: 500;
+            --md-sys-typescale-headline-small-size: 24px;
+            --md-sys-typescale-headline-small-line-height: 32px;
+
+            --md-sys-typescale-title-medium-font: "Roboto", sans-serif;
+            --md-sys-typescale-title-medium-weight: 500;
+            --md-sys-typescale-title-medium-size: 16px;
+            --md-sys-typescale-title-medium-line-height: 24px;
+            --md-sys-typescale-title-medium-letter-spacing: 0.15px;
+
+            /* Shape */
+            --md-sys-shape-corner-small: 8px;
+            --md-sys-shape-corner-medium: 12px;
+            --md-sys-shape-corner-large: 16px;
+            --md-sys-shape-corner-extra-large: 28px;
+
+            /* Animation */
+            --md-sys-motion-duration-short1: 100ms;
+            --md-sys-motion-duration-short2: 200ms;
+            --md-sys-motion-duration-medium1: 250ms;
+            --md-sys-motion-duration-medium2: 400ms;
+            --md-sys-motion-duration-long1: 500ms;
+            --md-sys-motion-duration-long2: 700ms;
+            --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+            --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+            --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+            --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+        }
+
+        /* Dark Theme Colors */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --md-sys-color-primary: #D0BCFF;
+                --md-sys-color-on-primary: #381E72;
+                --md-sys-color-primary-container: #4F378B;
+                --md-sys-color-on-primary-container: #EADDFF;
+                --md-sys-color-secondary: #CCC2DC;
+                --md-sys-color-on-secondary: #332D41;
+                --md-sys-color-secondary-container: #4A4458;
+                --md-sys-color-on-secondary-container: #E8DEF8;
+                --md-sys-color-tertiary: #EFB8C8;
+                --md-sys-color-on-tertiary: #492532;
+                --md-sys-color-tertiary-container: #633B48;
+                --md-sys-color-on-tertiary-container: #FFD8E4;
+                --md-sys-color-error: #F2B8B5;
+                --md-sys-color-on-error: #601410;
+                --md-sys-color-error-container: #8C1D18;
+                --md-sys-color-on-error-container: #F9DEDC;
+                --md-sys-color-outline: #938F99;
+                --md-sys-color-background: #1C1B1F;
+                --md-sys-color-on-background: #E6E1E5;
+                --md-sys-color-surface: #1C1B1F;
+                --md-sys-color-on-surface: #E6E1E5;
+                --md-sys-color-surface-variant: #49454F;
+                --md-sys-color-on-surface-variant: #CAC4D0;
+                --md-sys-color-inverse-surface: #E6E1E5;
+                --md-sys-color-inverse-on-surface: #313033;
+                --md-sys-audio-shadow-dark: rgba(0, 0, 0, 0.3);
+                --md-sys-audio-shadow-light: rgba(255, 255, 255, 0.1);
+                --md-sys-backdrop-filter: rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--md-sys-typescale-body-large-font);
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--md-sys-color-background);
+            overflow: auto;
+            color: var(--md-sys-color-on-background);
+            transition: background-color 0.3s ease;
+        }
+
+        .background-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--md-sys-color-primary-container), var(--md-sys-color-tertiary-container));
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(103, 80, 164, 0.85), rgba(125, 82, 96, 0.85));
+            z-index: 1;
+        }
+
+        .background-content {
+            position: relative;
+            z-index: 2;
+            color: var(--md-sys-color-on-primary-container);
+            max-width: 600px;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .background-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            color: var(--md-sys-color-on-primary-container);
+        }
+
+        .background-content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            line-height: 1.6;
+            opacity: 0.9;
+            color: var(--md-sys-color-on-primary-container);
+        }
+
+        .form-container {
+            width: 500px;
+            background-color: var(--md-sys-color-surface);
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: var(--md-sys-elevation-level3);
+            overflow-y: auto;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--md-sys-shape-corner-extra-large) 0 0 var(--md-sys-shape-corner-extra-large);
+            transition: all var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-tertiary));
+            width: 48px;
+            height: 48px;
+            border-radius: var(--md-sys-shape-corner-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+
+        .logo-icon span {
+            color: var(--md-sys-color-on-primary);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--md-sys-color-on-surface);
+        }
+
+        .info-card {
+            background: var(--md-sys-color-surface-variant);
+            border-radius: var(--md-sys-shape-corner-large);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--md-sys-elevation-level1);
+        }
+
+        .info-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .info-title span {
+            margin-right: 10px;
+            color: var(--md-sys-color-primary);
+        }
+
+        .status-icon {
+            font-size: 4rem;
+            color: var(--md-sys-color-primary);
+            text-align: center;
+            margin: 2rem 0;
+            animation: pulse 2s infinite;
+        }
+
+        .form-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--md-sys-color-on-surface);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .form-subtitle {
+            font-size: 1.1rem;
+            color: var(--md-sys-color-outline);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-btn {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            border: none;
+            padding: 16px;
+            border-radius: var(--md-sys-shape-corner-large);
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--md-sys-motion-duration-short2) var(--md-sys-motion-easing-standard);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--md-sys-elevation-level1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: var(--md-sys-color-primary);
+            border: 2px solid var(--md-sys-color-outline);
+        }
+
+        .action-btn:hover {
+            box-shadow: var(--md-sys-elevation-level2);
+            transform: translateY(-2px);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            animation: ripple var(--md-sys-motion-duration-short2) linear;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .feature-list {
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 1rem;
+            color: var(--md-sys-color-on-surface-variant);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--md-sys-color-primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--md-sys-color-surface-variant);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--md-sys-elevation-level1);
+            transition: all var(--md-sys-motion-duration-short2) ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .background-container {
+                height: 300px;
+                padding: 1.5rem;
+            }
+
+            .form-container {
+                width: 100%;
+                padding: 2rem 1.5rem;
+                border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0;
+                margin-top: -30px;
+            }
+
+            .background-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .background-content p {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .form-container>* {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .logo {
+            animation-delay: 0.1s;
+        }
+
+        .status-icon {
+            animation-delay: 0.2s;
+        }
+
+        .form-title {
+            animation-delay: 0.3s;
+        }
+
+        .form-subtitle {
+            animation-delay: 0.4s;
+        }
+
+        .info-card {
+            animation-delay: 0.5s;
+        }
+
+        .feature-list {
+            animation-delay: 0.6s;
+        }
+
+        .btn-container {
+            animation-delay: 0.7s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 左侧背景区域 -->
+    <div class="background-container">
+        <div class="background-overlay"></div>
+        <div class="background-content">
+        </div>
+    </div>
+
+    <!-- 右侧表单区域 -->
+    <div class="form-container">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <span class="material-symbols-rounded">forum</span>
+            </div>
+            <div class="logo-text">T.I.C.S</div>
+        </div>
+
+        <div class="status-icon">
+            <span class="material-symbols-rounded" style="font-size: 10rem;">event_available</span>
+        </div>
+
+        <h1 class="form-title">购买活动已结束</h1>
+        <p class="form-subtitle">本次购买活动已经结束，请加入聊天室获取更多信息</p>
+
+        <div class="info-card">
+            <div class="info-title">
+                <span class="material-symbols-rounded">info</span>
+                <h3>重要信息</h3>
+            </div>
+            <p>本次限量购买活动已结束。所有可用名额已满，不再接受新订单。</p>
+        </div>
+
+        <div class="feature-list">
+            <h3 style="margin-bottom: 10px;">加入聊天室，您可以：</h3>
+            <ul>
+                <li>获取第三版编年史的第一手通知</li>
+                <li>与其他成员交流经验和想法</li>
+                <li>接收产品更新和特别优惠</li>
+                <li>向管理员提问并获得解答</li>
+            </ul>
+        </div>
+
+        <div class="btn-container">
+            <button class="action-btn" id="joinChatBtn">
+                <span class="material-symbols-rounded">chat</span>
+                加入聊天室
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 波纹效果
+            const buttons = document.querySelectorAll('.action-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple');
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // 加入聊天室按钮事件
+            document.getElementById('joinChatBtn').addEventListener('click', function () {
+                window.location.href = 'https://next.tics.top/others/community';
+            });
+        });
+    </script>
+</body>
+
+</html>

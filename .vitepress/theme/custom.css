@@ -1,0 +1,643 @@
+/* Enhanced Animation Keyframes */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(2);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(-5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes floatingAnimation {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes mdTransition {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtlePopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Global Styles */
+body {
+  overflow-x: hidden;
+  animation: blurIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica, Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Content Area Animations */
+.VPContent {
+  animation: blurIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.VPContent>div {
+  animation: fadeInScale 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Markdown File Transition */
+.VPDoc .content {
+  animation: mdTransition 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Sidebar Animation */
+.VPSidebar {
+  animation: slideInFromRight 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Footer Animation */
+.VPFooter {
+  animation: fadeInScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+/* Enhanced Link Styles */
+a {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+a:hover {
+  color: var(--vp-c-brand);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.5px;
+  bottom: -0.5px;
+  left: 0;
+  background-color: var(--vp-c-brand);
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover:active {
+  filter: brightness(0.8);
+  transform: scale(0.98);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Enhanced Button Animations */
+.VPButton {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+.VPButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.VPButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: all 0.5s;
+}
+
+.VPButton:hover::before {
+  left: 100%;
+}
+
+.VPButton:hover:active {
+  filter: brightness(0.9);
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) inset;
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Enhanced Card Effects */
+.VPTeamMembersItem,
+.VPSponsorsItem,
+.VPDocAsideSponsors {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 8px;
+}
+
+.VPTeamMembersItem:hover,
+.VPSponsorsItem:hover,
+.VPDocAsideSponsors:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero Section Animation */
+.VPHero {
+  animation: floatingAnimation 5s ease-in-out infinite;
+}
+
+/* Enhanced Search Box Animation */
+.VPNavBarSearch {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 4px;
+}
+
+.VPNavBarSearch:focus-within {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(var(--vp-c-brand-rgb), 0.15);
+}
+
+/* Social Links Styles */
+.social-links-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-soft);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--vp-c-divider);
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.social-content {
+  flex: 1;
+}
+
+.social-platform {
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.social-handle {
+  font-size: 0.9em;
+  color: var(--vp-c-text-2);
+}
+
+.social-link:hover .social-platform {
+  color: var(--vp-c-brand);
+}
+
+[lang="ja"],
+:lang(ja) {
+  font-family: 'TICS English',
+}
+
+[lang="zh-cn"],
+:lang(zh-cn) {
+  font-family: 'TICS English',
+}
+
+@font-face {
+  font-family: 'TeyvatFont';
+  src: url('/TVB.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'about';
+  src: url('/ABOUT.ttf');
+}
+
+/* Teyvat Language Font Setting */
+[lang="Teyvat"],
+:lang(Teyvat) {
+  font-family: 'TeyvatFont', sans-serif;
+}
+
+/* Enhanced List Item Animations */
+.VPSidebarItem {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.VPSidebarItem:hover {
+  transform: translateX(3px);
+}
+
+/* Table Enhancements */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+table:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+th,
+td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 12px;
+  transition: background-color 0.3s ease;
+}
+
+tr:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* Code Block Enhancements */
+pre {
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+pre:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Enhancements */
+img {
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Menu Item Animations */
+.VPNavBarMenuLink {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: visible;
+}
+
+.VPNavBarMenuLink:hover {
+  transform: translateY(-1px);
+}
+
+/* 导航图标样式 - 默认只显示图标 */
+.VPNavBarMenuLink .nav-icon-svg {
+  display: inline-flex !important;
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 0;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 1 !important;
+}
+
+.VPNavBarMenuLink .nav-icon-svg svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* 默认隐藏导航文字 - 只隐藏主导航栏的链接文字 */
+.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink .VPText,
+.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink > span:not(.nav-icon-svg),
+.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink > a > span:not(.nav-icon-svg),
+.VPNavBarMenuLink:not(.VPNavBarMenuDropdownItem .VPNavBarMenuLink) .VPText:not(:empty) {
+  opacity: 0 !important;
+  max-width: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 0 !important;
+  padding: 0 !important;
+  display: inline-block;
+}
+
+/* 鼠标悬停时显示文字 */
+.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink:hover .VPText,
+.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink:hover > span:not(.nav-icon-svg),
+.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink:hover > a > span:not(.nav-icon-svg),
+.VPNavBarMenuLink:not(.VPNavBarMenuDropdownItem .VPNavBarMenuLink):hover .VPText:not(:empty) {
+  opacity: 1 !important;
+  max-width: 200px !important;
+  width: auto !important;
+  margin-left: 8px !important;
+  padding: 0 !important;
+}
+
+.VPNavBarMenuLink:hover .nav-icon-svg {
+  margin-right: 6px;
+}
+
+/* 下拉菜单项也使用图标模式 */
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink .VPText,
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink > span:not(.nav-icon-svg),
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink > a > span:not(.nav-icon-svg),
+.VPNavBarMenuDropdownItem a .VPText,
+.VPNavBarMenuDropdownItem a > span:not(.nav-icon-svg),
+.VPNavBarMenuGroupContent .VPNavBarMenuLink .VPText,
+.VPNavBarMenuGroupContent .VPNavBarMenuLink > span:not(.nav-icon-svg),
+.VPNavBarMenuGroupContent a .VPText,
+.VPNavBarMenuGroupContent a > span:not(.nav-icon-svg) {
+  opacity: 0 !important;
+  max-width: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 0 !important;
+  padding: 0 !important;
+  display: inline-block;
+}
+
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover .VPText,
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover > span:not(.nav-icon-svg),
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover > a > span:not(.nav-icon-svg),
+.VPNavBarMenuDropdownItem a:hover .VPText,
+.VPNavBarMenuDropdownItem a:hover > span:not(.nav-icon-svg),
+.VPNavBarMenuGroupContent .VPNavBarMenuLink:hover .VPText,
+.VPNavBarMenuGroupContent .VPNavBarMenuLink:hover > span:not(.nav-icon-svg),
+.VPNavBarMenuGroupContent a:hover .VPText,
+.VPNavBarMenuGroupContent a:hover > span:not(.nav-icon-svg) {
+  opacity: 1 !important;
+  max-width: 200px !important;
+  width: auto !important;
+  margin-left: 6px !important;
+  padding: 0 !important;
+}
+
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink .nav-icon-svg,
+.VPNavBarMenuDropdownItem a .nav-icon-svg,
+.VPNavBarMenuGroupContent .VPNavBarMenuLink .nav-icon-svg,
+.VPNavBarMenuGroupContent a .nav-icon-svg {
+  margin-right: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 1 !important;
+}
+
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover .nav-icon-svg,
+.VPNavBarMenuDropdownItem a:hover .nav-icon-svg,
+.VPNavBarMenuGroupContent .VPNavBarMenuLink:hover .nav-icon-svg,
+.VPNavBarMenuGroupContent a:hover .nav-icon-svg {
+  margin-right: 6px !important;
+}
+
+.VPNavBarMenuDropdownItem .nav-icon-svg svg,
+.VPNavBarMenuGroupContent .nav-icon-svg svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* 下拉菜单标题也使用图标模式 */
+.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink .VPText,
+.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink > span:not(.nav-icon-svg) {
+  opacity: 0;
+  max-width: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 0;
+  display: inline-block;
+}
+
+.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink:hover .VPText,
+.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink:hover > span:not(.nav-icon-svg) {
+  opacity: 1;
+  max-width: 200px;
+  width: auto;
+  margin-left: 8px;
+}
+
+/* Dropdown Menu Animations - 从图标位置展开和收起 */
+.VPNavBarMenuGroup {
+  position: relative;
+}
+
+.VPNavBarMenuGroup .VPNavBarMenuGroupContent {
+  /* 从左上角（图标位置）开始变换 */
+  transform-origin: 0 0;
+  opacity: 0;
+  /* 初始状态：缩小并稍微向上偏移 */
+  transform: scale(0.88) translateY(-6px) translateX(-2px);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+/* 展开状态 */
+.VPNavBarMenuGroup:hover .VPNavBarMenuGroupContent,
+.VPNavBarMenuGroup[aria-expanded="true"] .VPNavBarMenuGroupContent,
+.VPNavBarMenuGroup.active .VPNavBarMenuGroupContent {
+  opacity: 1;
+  /* 完全展开，回到原始位置 */
+  transform: scale(1) translateY(0) translateX(0);
+  pointer-events: auto;
+}
+
+/* 收起动画 - 使用不同的缓动曲线，让收起更快 */
+.VPNavBarMenuGroup:not(:hover):not([aria-expanded="true"]):not(.active) .VPNavBarMenuGroupContent {
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 确保下拉菜单定位相对于图标 */
+.VPNavBarMenuItem {
+  position: relative;
+}
+
+.VPNavBarMenuItem .VPNavBarMenuGroupContent {
+  transform-origin: left top;
+  margin-top: 4px;
+}
+
+/* Page Transition Effect */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Enhanced Focus Styles for Accessibility */
+:focus {
+  outline: 1px solid var(--vp-c-brand);
+  outline-offset: 1px;
+  transition: outline-offset 0.2s ease;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Dark Mode Transition */
+@media (prefers-color-scheme: dark) {
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #F862FF 30%, #03A5F8);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #F862FF 50%, #03A5F8 50%);
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+.VPNavBarTitle .title {
+  background: linear-gradient(120deg, #F862FF, #03A5F8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.VPButton.brand {
+  background-image: linear-gradient(to right, #F862FF, #03A5F8);
+  border: none;
+}
+
+.VPButton.brand:hover {
+  opacity: 0.9;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  /* 缩小滚动条宽度 */
+  height: 8px;
+  /* 缩小滚动条高度 */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+  /* 使轨道的圆角更加柔和 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  /* 使滚动条本身的圆角更加柔和 */
+  transition: background-color 0.3s ease;
+  /* 轨道背景色过渡 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  /* 在hover时增加圆角的程度 */
+  transition: background-color 0.3s ease;
+  /* 轨道背景色过渡 */
+}

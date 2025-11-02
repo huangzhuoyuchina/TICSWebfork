@@ -1,0 +1,16 @@
+  { name: "4群", number: "964080723", link: "https://qm.qq.com/cgi-bin/qm/qr?-wv=1027&k=Ac0aa6hRRS-tQg13ejKX0T9ju5bvBYNW&group-code=964080723" },
+  { name: "5群", number: "551422505", link: "https://qm.qq.com/cgi-bin/qm/qr?-wv=1027&k=Ac0aa6hRRS-tQg13ejKX0T9ju5bvBYNW&group-code=551422505" },
+  { name: "引导群", number: "953723871", link: "https://qm.qq.com/cgi-bin/qm/qr?-wv=1027&k=Ac0aa6hRRS-tQg13ejKX0T9ju5bvBYNW&group-code=953723871" },
+  
+      <a href="https://qm.qq.com/cgi-bin/qm/qr?-wv=1027&k=Ac0aa6hRRS-tQg13ejKX0T9ju5bvBYNW&group-code=806316890" class="social-link" target="_blank" rel="noopener noreferrer">
+      <div class="social-content">
+        <div class="social-platform">聊天室 ②</div>
+        <div class="social-handle">QQ群号：806316890</div>
+      </div>
+    </a>
+    <a href="https://qm.qq.com/cgi-bin/qm/qr?-wv=1027&k=Ac0aa6hRRS-tQg13ejKX0T9ju5bvBYNW&group-code=210439111" class="social-link" target="_blank" rel="noopener noreferrer">
+      <div class="social-content">
+        <div class="social-platform">聊天室 ③</div>
+        <div class="social-handle">QQ群号：210439111</div>
+      </div>
+    </a>
