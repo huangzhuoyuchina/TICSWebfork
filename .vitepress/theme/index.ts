@@ -6,6 +6,7 @@ import GeneralMembersList from './components/GeneralMembersList.vue'
 import Hitokoto from './components/Hitokoto.vue'
 import Furigana from './components/Furigana.vue'
 import HomePage from './components/HomePage.vue'
+import ChineseConverter from './components/ChineseConverter.vue'
 import Switch from './switch.vue'
 import notfound from './NotFound.vue'
 
@@ -20,5 +21,6 @@ export default {
     app.component('Hitokoto', Hitokoto)
     app.component('Furigana', Furigana)
     app.component('HomePage', HomePage)
+    app.component('ChineseConverter', ChineseConverter)
   }
 }

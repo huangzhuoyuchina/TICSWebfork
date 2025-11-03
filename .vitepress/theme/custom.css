@@ -91,7 +91,7 @@
 body {
   overflow-x: hidden;
   animation: blurIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--vp-font-family-base), sans-serif;
   transition: background-color 0.3s ease;
 }
 
@@ -283,12 +283,12 @@ a:hover::after {
 
 [lang="ja"],
 :lang(ja) {
-  font-family: 'TICS English',
+  font-family: var(--vp-font-family-base), sans-serif;
 }
 
 [lang="zh-cn"],
 :lang(zh-cn) {
-  font-family: 'TICS English',
+  font-family: var(--vp-font-family-base), sans-serif;
 }
 
 @font-face {
@@ -590,22 +590,97 @@ img:hover {
   }
 }
 
+/* 全局字体设置 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/MiSans Latin VF.ttf') format('truetype-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --vp-font-family-base: 'MiSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  
+  --vp-c-brand: #00999F;
+  --vp-c-brand-light: #2FAEAB;
+  --vp-c-brand-lighter: #5EC3BC;
+  --vp-c-brand-dark: #00999F;
+  --vp-c-brand-darker: #00999F;
+  --vp-nav-logo-height: 24px;
+  --vp-nav-height: 64px;
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #F862FF 30%, #03A5F8);
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #F862FF 50%, #03A5F8 50%);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #00999F 30%, #5EC3BC);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #00999F 50%, #5EC3BC 50%);
   --vp-home-hero-image-filter: blur(40px);
+  
+  /* VitePress 全局强调色 */
+  --vp-c-brand-1: #00999F;
+  --vp-c-brand-2: #2FAEAB;
+  --vp-c-brand-3: #5EC3BC;
+  --vp-c-brand-soft: rgba(0, 153, 159, 0.14);
+}
+
+/* 导航栏亚克力效果 */
+.VPNav {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(0, 153, 159, 0.1) !important;
+}
+
+.dark .VPNav {
+  background: rgba(36, 36, 36, 0.7) !important;
+}
+
+.VPNavBar {
+  background: transparent !important;
+}
+
+.VPNavBar.has-sidebar {
+  background: transparent !important;
 }
 
 .VPNavBarTitle .title {
-  background: linear-gradient(120deg, #F862FF, #03A5F8);
+  font-weight: 600;
+  background: -webkit-linear-gradient(120deg, #00999F 30%, #5EC3BC);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.VPNavBarMenuLink {
+  transition: all 0.3s ease !important;
+}
+
+.VPNavBarMenuLink:hover {
+  opacity: 1;
+}
+
+.VPNavBarHamburger .container {
+  opacity: 0.9;
+}
+
+.VPNavBarHamburger .container:hover {
+  opacity: 1;
+}
+
+/* 导航菜单亚克力效果 */
+.VPNavScreen {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(0, 153, 159, 0.1) !important;
+}
+
+.dark .VPNavScreen {
+  background: rgba(36, 36, 36, 0.7) !important;
 }
 
 .VPButton.brand {
-  background-image: linear-gradient(to right, #F862FF, #03A5F8);
+  background-image: linear-gradient(to right, #00999F, #5EC3BC);
   border: none;
 }
 
@@ -613,31 +688,22 @@ img:hover {
   opacity: 0.9;
 }
 
+/* 滚动条样式 */
 ::-webkit-scrollbar {
-  width: 10px;
-  /* 缩小滚动条宽度 */
+  width: 8px;
   height: 8px;
-  /* 缩小滚动条高度 */
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
-  border-radius: 10px;
-  /* 使轨道的圆角更加柔和 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  /* 使滚动条本身的圆角更加柔和 */
-  transition: background-color 0.3s ease;
-  /* 轨道背景色过渡 */
+  background: linear-gradient(to bottom, #00999F, #5EC3BC);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  /* 在hover时增加圆角的程度 */
-  transition: background-color 0.3s ease;
-  /* 轨道背景色过渡 */
+  background: linear-gradient(to bottom, #00999F, #5EC3BC);
+  opacity: 0.9;
 }

@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide, onMounted } from 'vue'
+import ChineseConverter from '@theme/components/ChineseConverter.vue'
 
 const { isDark } = useData()
 
@@ -346,7 +347,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <DefaultTheme.Layout />
+  <DefaultTheme.Layout>
+    <template #nav-bar-content-after>
+      <div class="nav-bar-extra">
+        <ChineseConverter />
+      </div>
+    </template>
+  </DefaultTheme.Layout>
 </template>
 
 <style>
@@ -372,5 +379,11 @@ onMounted(() => {
 
 .VPSwitchAppearance .check {
   transform: none !important;
+}
+
+.nav-bar-extra {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
 }
 </style>

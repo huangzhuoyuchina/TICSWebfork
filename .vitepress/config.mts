@@ -7,7 +7,7 @@ export default defineConfig({
   description: "以创意与热爱重塑提瓦特的二创组织",
   locales: {
     root: {
-      label: '简体中文',
+      label: '中文',
       lang: 'zh-CN',
     },
     en: {
@@ -245,7 +245,7 @@ export default defineConfig({
         }
       }
     },
-    generalMembers: [{"name":"叶雨晴·克里斯蒂安"},{"name":"芙安"},{"name":"瑞"},{"name":"森林蝙蝠"},{"name":"冬日光114"},{"name":"墨墨"},{"name":"Moru.kyang"},{"name":"Pecarius"},{"name":"岁暮"},{"name":"剩下交给星空"},{"name":"The昊子"},{"name":"想要原石真君"},{"name":"然"},{"name":"根号龙"},{"name":"真·风神杂烩菜"},{"name":"千星."},{"name":"提瓦特老非酋"},{"name":"张3上树"},{"name":"阴间水蜜桃"},{"name":"林子大了什么鸟都吃"},{"name":"舒琳"},{"name":"卢少爷"},{"name":"名余曰正则兮"},{"name":"容心"},{"name":"温迪"},{"name":"花火花花火花火火"},{"name":"烧糊的狐小苏"},{"name":"听凭风引"},{"name":"魈猫猫"},{"name":"孤独小程"},{"name":"别管懒大王"},{"name":"川崎安"},{"name":"虽云乐"},{"name":"流星Light-Star"},{"name":"同山月"},{"name":"YinNery"},{"name":"宇橙子"},{"name":"白枝云冬"},{"name":"天徐"},{"name":"乐正七"}]
+    generalMembers: [{"name":"叶雨晴·克里斯蒂安"},{"name":"芙安"},{"name":"瑞"},{"name":"森林蝙蝠"},{"name":"冬日光114"},{"name":"墨墨"},{"name":"Moru.kyang"},{"name":"Pecarius"},{"name":"岁暮"},{"name":"剩下交给星空"},{"name":"The昊子"},{"name":"想要原石真君"},{"name":"然"},{"name":"根号龙"},{"name":"真·风神杂烩菜"},{"name":"千星."},{"name":"提瓦特老非酋"},{"name":"张3上树"},{"name":"阴间水蜜桃"},{"name":"林子大了什么鸟都吃"},{"name":"舒琳"},{"name":"卢少爷"},{"name":"名余曰正则兮"},{"name":"容心"},{"name":"温迪"},{"name":"花火花火火花火火"},{"name":"烧糊的狐小苏"},{"name":"听凭风引"},{"name":"魈猫猫"},{"name":"孤独小程"},{"name":"别管懒大王"},{"name":"川崎安"},{"name":"虽云乐"},{"name":"流星Light-Star"},{"name":"同山月"},{"name":"YinNery"},{"name":"宇橙子"},{"name":"白枝云冬"},{"name":"天徐"},{"name":"乐正七"}]
   },
   markdown: {
     lineNumbers: true,
