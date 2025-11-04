@@ -88,7 +88,7 @@ export default defineConfig({
         },
       }
     }
-  },
+  } as any,
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/head&favicon.png' }],
     ['link', { rel: 'apple-touch-icon', href: '/head&favicon.png' }],

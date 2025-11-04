@@ -370,7 +370,7 @@ onMounted(() => {
 
 ::view-transition-new(root),
 .dark::view-transition-old(root) {
-  z-index: 9999;
+  z-index: 0;
 }
 
 .VPSwitchAppearance {
