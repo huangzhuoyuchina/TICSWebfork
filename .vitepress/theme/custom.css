@@ -679,7 +679,7 @@ img:hover {
 }
 
 html.zh-traditional {
-  --vp-font-family-base: 'MiSans', 'Meiryo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --vp-font-family-base: 'MiSans','Yu Gothic UI','Meiryo', 'Noto Sans JP',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 :root {
 }
