@@ -77,8 +77,8 @@ onMounted(() => {
   applyTraditionalClass()
   if ((window as any).OpenCC) {
     const OpenCC = (window as any).OpenCC
-    toTraditional = OpenCC.Converter({ from: 'cn', to: 'tw' })
-    toSimplified = OpenCC.Converter({ from: 'tw', to: 'cn' })
+    toTraditional = OpenCC.Converter({ from: 'cn', to: 'twp' })
+    toSimplified = OpenCC.Converter({ from: 'twp', to: 'cn' })
     openccLoaded.value = true
     applyTraditionalClass()
     convertPage()
@@ -88,8 +88,8 @@ onMounted(() => {
   script.src = '/libs/opencc.full.js'
   script.onload = () => {
     const OpenCC = (window as any).OpenCC
-    toTraditional = OpenCC.Converter({ from: 'cn', to: 'tw' })
-    toSimplified = OpenCC.Converter({ from: 'tw', to: 'cn' })
+    toTraditional = OpenCC.Converter({ from: 'cn', to: 'twp' })
+    toSimplified = OpenCC.Converter({ from: 'twp', to: 'cn' })
     openccLoaded.value = true
     applyTraditionalClass()
     convertPage()

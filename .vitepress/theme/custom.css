@@ -395,10 +395,9 @@ img:hover {
 }
 
 /* 默认隐藏导航文字 - 只隐藏主导航栏的链接文字 */
-.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink .VPText,
-.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink > span:not(.nav-icon-svg),
-.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink > a > span:not(.nav-icon-svg),
-.VPNavBarMenuLink:not(.VPNavBarMenuDropdownItem .VPNavBarMenuLink) .VPText:not(:empty) {
+.VPNavBarMenuLink.has-nav-icon .VPText,
+.VPNavBarMenuLink.has-nav-icon > span:not(.nav-icon-svg),
+.VPNavBarMenuLink.has-nav-icon > a > span:not(.nav-icon-svg) {
   opacity: 0 !important;
   max-width: 0 !important;
   width: 0 !important;
@@ -414,31 +413,15 @@ img:hover {
 }
 
 /* 鼠标悬停时显示文字 */
-.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink:hover .VPText,
-.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink:hover > span:not(.nav-icon-svg),
-.VPNavBarMenu:not(.VPNavBarMenuGroup) .VPNavBarMenuLink:hover > a > span:not(.nav-icon-svg),
-.VPNavBarMenuLink:not(.VPNavBarMenuDropdownItem .VPNavBarMenuLink):hover .VPText:not(:empty) {
-  opacity: 1 !important;
-  max-width: 200px !important;
-  width: auto !important;
-  margin-left: 8px !important;
-  padding: 0 !important;
-}
-
-.VPNavBarMenuLink:hover .nav-icon-svg {
-  margin-right: 6px;
-}
+.VPNavBarMenuLink:hover .nav-icon-svg {}
 
 /* 下拉菜单项也使用图标模式 */
-.VPNavBarMenuDropdownItem .VPNavBarMenuLink .VPText,
-.VPNavBarMenuDropdownItem .VPNavBarMenuLink > span:not(.nav-icon-svg),
-.VPNavBarMenuDropdownItem .VPNavBarMenuLink > a > span:not(.nav-icon-svg),
-.VPNavBarMenuDropdownItem a .VPText,
-.VPNavBarMenuDropdownItem a > span:not(.nav-icon-svg),
-.VPNavBarMenuGroupContent .VPNavBarMenuLink .VPText,
-.VPNavBarMenuGroupContent .VPNavBarMenuLink > span:not(.nav-icon-svg),
-.VPNavBarMenuGroupContent a .VPText,
-.VPNavBarMenuGroupContent a > span:not(.nav-icon-svg) {
+.VPNavBarMenuDropdownItem .has-nav-icon .VPText,
+.VPNavBarMenuDropdownItem .has-nav-icon > span:not(.nav-icon-svg),
+.VPNavBarMenuDropdownItem .has-nav-icon > a > span:not(.nav-icon-svg),
+.VPNavBarMenuGroupContent .has-nav-icon .VPText,
+.VPNavBarMenuGroupContent .has-nav-icon > span:not(.nav-icon-svg),
+.VPNavBarMenuGroupContent .has-nav-icon > a > span:not(.nav-icon-svg) {
   opacity: 0 !important;
   max-width: 0 !important;
   width: 0 !important;
@@ -453,21 +436,12 @@ img:hover {
   display: inline-block;
 }
 
-.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover .VPText,
-.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover > span:not(.nav-icon-svg),
-.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover > a > span:not(.nav-icon-svg),
-.VPNavBarMenuDropdownItem a:hover .VPText,
-.VPNavBarMenuDropdownItem a:hover > span:not(.nav-icon-svg),
-.VPNavBarMenuGroupContent .VPNavBarMenuLink:hover .VPText,
-.VPNavBarMenuGroupContent .VPNavBarMenuLink:hover > span:not(.nav-icon-svg),
-.VPNavBarMenuGroupContent a:hover .VPText,
-.VPNavBarMenuGroupContent a:hover > span:not(.nav-icon-svg) {
-  opacity: 1 !important;
-  max-width: 200px !important;
-  width: auto !important;
-  margin-left: 6px !important;
-  padding: 0 !important;
-}
+.VPNavBarMenuDropdownItem .has-nav-icon:hover .VPText {}
+.VPNavBarMenuDropdownItem .has-nav-icon:hover > span:not(.nav-icon-svg) {}
+.VPNavBarMenuDropdownItem .has-nav-icon:hover > a > span:not(.nav-icon-svg) {}
+.VPNavBarMenuGroupContent .has-nav-icon:hover .VPText {}
+.VPNavBarMenuGroupContent .has-nav-icon:hover > span:not(.nav-icon-svg) {}
+.VPNavBarMenuGroupContent .has-nav-icon:hover > a > span:not(.nav-icon-svg) {}
 
 .VPNavBarMenuDropdownItem .VPNavBarMenuLink .nav-icon-svg,
 .VPNavBarMenuDropdownItem a .nav-icon-svg,
@@ -483,12 +457,10 @@ img:hover {
   opacity: 1 !important;
 }
 
-.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover .nav-icon-svg,
-.VPNavBarMenuDropdownItem a:hover .nav-icon-svg,
-.VPNavBarMenuGroupContent .VPNavBarMenuLink:hover .nav-icon-svg,
-.VPNavBarMenuGroupContent a:hover .nav-icon-svg {
-  margin-right: 6px !important;
-}
+.VPNavBarMenuDropdownItem .VPNavBarMenuLink:hover .nav-icon-svg {}
+.VPNavBarMenuDropdownItem a:hover .nav-icon-svg {}
+.VPNavBarMenuGroupContent .VPNavBarMenuLink:hover .nav-icon-svg {}
+.VPNavBarMenuGroupContent a:hover .nav-icon-svg {}
 
 .VPNavBarMenuDropdownItem .nav-icon-svg svg,
 .VPNavBarMenuGroupContent .nav-icon-svg svg {
@@ -498,8 +470,8 @@ img:hover {
 }
 
 /* 下拉菜单标题也使用图标模式 */
-.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink .VPText,
-.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink > span:not(.nav-icon-svg) {
+.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink.has-nav-icon .VPText,
+.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink.has-nav-icon > span:not(.nav-icon-svg) {
   opacity: 0;
   max-width: 0;
   width: 0;
@@ -510,13 +482,8 @@ img:hover {
   display: inline-block;
 }
 
-.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink:hover .VPText,
-.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink:hover > span:not(.nav-icon-svg) {
-  opacity: 1;
-  max-width: 200px;
-  width: auto;
-  margin-left: 8px;
-}
+.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink.has-nav-icon:hover .VPText {}
+.VPNavBarMenuItem:not(.VPNavBarMenuDropdownItem) .VPNavBarMenuLink.has-nav-icon:hover > span:not(.nav-icon-svg) {}
 
 /* Dropdown Menu Animations - 从图标位置展开和收起 */
 .VPNavBarMenuGroup {
@@ -665,18 +632,18 @@ img:hover {
   position: fixed !important;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 10001 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .VPNavBarHamburger[aria-expanded="true"] ~ .VPNavScreen {
-  display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
   transform: none !important;
 }
+
 
 .dark .VPNavScreen {
   background: rgba(36, 36, 36, 0.7) !important;
@@ -712,7 +679,7 @@ img:hover {
 }
 
 html.zh-traditional {
-  --vp-font-family-base: 'MiSans', 'Yu Gothic UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --vp-font-family-base: 'MiSans','Yu Gothic UI','Meiryo', 'Noto Sans JP',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 :root {
 }
