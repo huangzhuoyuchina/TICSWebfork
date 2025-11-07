@@ -14,7 +14,7 @@
 本文件以米哈游游戏《崩坏：星穹铁道》世界观为核心载体，深度融合哲学、历史、系统科学等多学科知识，旨在为粉丝及崩铁兴趣群体提供一套兼具学术深度与文化共鸣的创新解读体系，为本项目组核心项目《穹学》提供编写指导与学业水平测试要求等。
 
 以下为本文件阅读链接：<br>
-[点我在线阅读](https://next.tics.top/files/zhezhidaxue.pdf) <br>
-[点我直接下载](https://next.tics.top/download/zhezhidaxue.pdf)
+[点我在线阅读](https://next.tics.top/zhezhidaxue.pdf) <br>
+[点我直接下载](https://next.tics.top/zhezhidaxue.pdf)
 
 > ***注：这个确实是我们自己写的。或许阿哈对于这个标准没有意见吧。***
